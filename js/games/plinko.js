@@ -1,4 +1,4 @@
-// Plinko Game Module
+// Plinko Game Module - Mobile Optimized
 // Save this file as /js/games/plinko.js
 export default {
     name: "Plinko",
@@ -254,6 +254,21 @@ export default {
             font-size: 14px;
         }
         
+        /* Control visibility - Desktop by default */
+        #plinko .desktop-control {
+            display: flex;
+        }
+        
+        #plinko .play-btn.desktop-control {
+            display: block;
+        }
+        
+        #plinko .main-controls,
+        #plinko .play-section,
+        #plinko .auto-section {
+            display: none;
+        }
+        
         #plinko .control-btn:hover:not(.active):not(:disabled) {
             background: rgba(123, 47, 247, 0.3);
             transform: translateY(-2px);
@@ -430,53 +445,327 @@ export default {
             }
         }
         
-        /* Mobile Responsive */
+        /* Mobile Responsive - Complete Redesign */
         @media (max-width: 768px) {
+            /* Hide desktop controls */
+            #plinko .desktop-control {
+                display: none !important;
+            }
+            
+            /* Show mobile controls */
+            #plinko .main-controls,
+            #plinko .play-section,
+            #plinko .auto-section {
+                display: block !important;
+            }
             #plinko .modal {
                 width: 100%;
                 height: 100%;
                 max-width: none;
                 max-height: none;
                 border-radius: 0;
-            }
-            
-            #plinko .game-content {
-                flex-direction: column;
-                padding: 10px;
-                gap: 10px;
-            }
-            
-            #plinko .controls-panel {
-                width: 100%;
-                padding: 15px;
-            }
-            
-            #plinko .board-wrapper {
-                max-width: 100%;
-                aspect-ratio: 3/4;
+                border: none;
+                background: linear-gradient(180deg, #1a1a2e 0%, #2d1b69 50%, #0f0c29 100%);
             }
             
             #plinko .header {
                 padding: 10px 15px;
+                background: linear-gradient(90deg, #7b2ff7 0%, #f107a3 100%);
             }
             
             #plinko .title-text {
                 font-size: 24px;
             }
             
-            #plinko .multiplier {
-                font-size: 10px;
-                padding: 6px 1px;
+            #plinko .game-content {
+                flex-direction: column;
+                padding: 0;
+                gap: 0;
+                height: calc(100% - 55px);
+                overflow: hidden;
+            }
+            
+            #plinko .board-container {
+                flex: 1;
+                padding: 10px;
+                min-height: 0;
+            }
+            
+            #plinko .board-wrapper {
+                height: 100%;
+                max-width: 100%;
+                aspect-ratio: auto;
+            }
+            
+            #plinko canvas {
+                background: linear-gradient(180deg, #2d1b69 0%, #1a1a2e 100%);
+            }
+            
+            #plinko .controls-panel {
+                width: 100%;
+                padding: 0;
+                gap: 0;
+                background: transparent;
+                border: none;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 auto;
+            }
+            
+            /* Show mobile controls on mobile */
+            #plinko .mobile-controls {
+                display: flex !important;
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            /* Show mobile-specific sections */
+            #plinko .main-controls,
+            #plinko .play-section,
+            #plinko .auto-section {
+                display: block !important;
+            }
+            
+            /* Hide the duplicate desktop controls */
+            #plinko .mobile-controls > .control-group {
+                display: none !important;
+            }
+            
+            #plinko .balance-display {
+                background: rgba(123, 47, 247, 0.1);
+                border: none;
+                border-radius: 0;
+                padding: 12px 15px;
+                margin: 0;
+                border-top: 1px solid rgba(123, 47, 247, 0.3);
+            }
+            
+            #plinko .balance-label {
+                display: none;
+            }
+            
+            #plinko .balance-amount {
+                font-size: 18px;
+                color: #00ff88;
+                text-align: left;
+            }
+            
+            #plinko .balance-amount::before {
+                content: 'Balance: ';
+                color: #a0a0b0;
+                font-size: 14px;
+            }
+            
+            /* Bet and Risk Controls in one row */
+            #plinko .main-controls {
+                display: flex !important;
+                gap: 10px;
+                padding: 10px 15px;
+                background: rgba(0, 0, 0, 0.3);
+            }
+            
+            #plinko .main-controls .control-group {
+                flex: 1;
+                gap: 6px;
+                display: flex !important;
+            }
+            
+            #plinko .main-controls .control-label {
+                font-size: 11px;
+                color: #a0a0b0;
+            }
+            
+            #plinko .main-controls .control-buttons {
+                display: flex;
+                gap: 5px;
+            }
+            
+            #plinko .main-controls .control-btn {
+                padding: 8px 6px;
+                font-size: 11px;
+                border-radius: 6px;
+            }
+            
+            /* Compact bet buttons for mobile */
+            #plinko .bet-btn {
+                min-width: 0;
+                flex: 1;
+            }
+            
+            /* Remove SC text on mobile */
+            #plinko .bet-btn::after {
+                content: '' !important;
+            }
+            
+            /* Play button section */
+            #plinko .play-section {
+                padding: 10px 15px;
+                background: rgba(0, 0, 0, 0.2);
+                display: block !important;
+            }
+            
+            #plinko .play-section .play-btn {
+                display: block !important;
+                width: 100%;
+                padding: 14px;
+                font-size: 16px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #00ff88, #00ffdd);
+            }
+            
+            /* Auto play section */
+            #plinko .auto-section {
+                padding: 10px 15px;
+                background: rgba(0, 0, 0, 0.1);
+                display: block !important;
+            }
+            
+            #plinko .auto-section .auto-controls {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            #plinko .auto-buttons {
+                display: flex;
+                gap: 8px;
+            }
+            
+            #plinko .auto-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+                min-width: auto;
+            }
+            
+            #plinko .auto-counter {
+                font-size: 12px;
+                min-width: 60px;
+            }
+            
+            /* Hide stats on mobile */
+            #plinko .stats {
+                display: none !important;
+            }
+            
+            #plinko .multipliers {
+                display: none !important; /* Hide the HTML multipliers on mobile - they're drawn on canvas */
+            }
+            
+            #plinko .win-splash {
+                font-size: 36px;
             }
         }
         
         @media (max-width: 480px) {
-            #plinko .control-buttons {
-                flex-wrap: wrap;
+            #plinko .header {
+                padding: 8px 12px;
+            }
+            
+            #plinko .title-text {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+            
+            #plinko .title-icon {
+                font-size: 24px;
+            }
+            
+            #plinko .close-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 18px;
+            }
+            
+            #plinko .board-container {
+                padding: 8px;
+            }
+            
+            #plinko .balance-amount {
+                font-size: 16px;
+            }
+            
+            #plinko .main-controls {
+                padding: 8px 12px;
+            }
+            
+            #plinko .control-btn {
+                padding: 7px 5px;
+                font-size: 10px;
+            }
+            
+            #plinko .play-section {
+                padding: 8px 12px;
+            }
+            
+            #plinko .play-btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            #plinko .auto-section {
+                padding: 8px 12px;
+            }
+            
+            #plinko .auto-btn {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+            
+            #plinko .multiplier {
+                font-size: 8px;
+                padding: 3px 0;
+            }
+        }
+        
+        /* Landscape mobile optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            #plinko .header {
+                padding: 8px 15px;
+            }
+            
+            #plinko .title-text {
+                font-size: 20px;
+            }
+            
+            #plinko .game-content {
+                flex-direction: row;
+                padding: 10px;
+            }
+            
+            #plinko .board-container {
+                flex: 1;
+                height: auto;
+            }
+            
+            #plinko .board-wrapper {
+                max-height: calc(100vh - 100px);
+                aspect-ratio: 3/4;
+            }
+            
+            #plinko .controls-panel {
+                width: 280px;
+                max-height: none;
+                overflow-y: auto;
+                padding: 12px;
+                gap: 8px;
+            }
+            
+            #plinko .balance-display {
+                padding: 8px;
+            }
+            
+            #plinko .balance-amount {
+                font-size: 18px;
+            }
+            
+            #plinko .play-btn {
+                padding: 10px;
+                font-size: 14px;
             }
             
             #plinko .stats {
-                grid-template-columns: 1fr;
+                display: none;
             }
         }
     </style>
@@ -506,7 +795,8 @@ export default {
                     <div class="balance-amount">0.00 SC</div>
                 </div>
                 
-                <div class="control-group">
+                <!-- Desktop Controls -->
+                <div class="control-group desktop-control">
                     <div class="control-label">Bet Amount</div>
                     <div class="control-buttons">
                         <button class="control-btn bet-btn active" data-bet="1">1 SC</button>
@@ -516,7 +806,7 @@ export default {
                     </div>
                 </div>
                 
-                <div class="control-group">
+                <div class="control-group desktop-control">
                     <div class="control-label">Risk Level</div>
                     <div class="control-buttons">
                         <button class="control-btn risk-btn" data-risk="low">LOW</button>
@@ -524,14 +814,52 @@ export default {
                     </div>
                 </div>
                 
-                <button class="play-btn">DROP BALL</button>
+                <!-- Mobile Controls -->
+                <div class="main-controls">
+                    <div class="control-group">
+                        <div class="control-label">Bet Amount</div>
+                        <div class="control-buttons">
+                            <button class="control-btn bet-btn active" data-bet="1">1</button>
+                            <button class="control-btn bet-btn" data-bet="2">2</button>
+                            <button class="control-btn bet-btn" data-bet="5">5</button>
+                            <button class="control-btn bet-btn" data-bet="10">10</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="control-label">Risk</div>
+                        <div class="control-buttons">
+                            <button class="control-btn risk-btn" data-risk="low">LOW</button>
+                            <button class="control-btn risk-btn active" data-risk="high">HIGH</button>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="control-group">
+                <!-- Play Button for both -->
+                <button class="play-btn desktop-control">DROP BALL</button>
+                <div class="play-section">
+                    <button class="play-btn">DROP BALL</button>
+                </div>
+                
+                <!-- Desktop Auto Controls -->
+                <div class="control-group desktop-control">
                     <div class="control-label">Auto Play</div>
                     <div class="auto-controls">
                         <button class="auto-btn" data-auto="10">10</button>
                         <button class="auto-btn" data-auto="50">50</button>
                         <button class="auto-btn" data-auto="100">100</button>
+                        <div class="auto-counter"></div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Auto Controls -->
+                <div class="auto-section">
+                    <div class="auto-controls">
+                        <div class="auto-buttons">
+                            <button class="auto-btn" data-auto="10">10</button>
+                            <button class="auto-btn" data-auto="50">50</button>
+                            <button class="auto-btn" data-auto="100">100</button>
+                        </div>
                         <div class="auto-counter"></div>
                     </div>
                 </div>
@@ -673,12 +1001,15 @@ class PlinkoGame {
         
         // Payouts for 12 rows
         this.payouts = {
-            high: [177, 24, 8.1, 2, 0.6, 0.2, 0.2, 0.2, 0.6, 2, 8.1, 24, 177],
+            high: [177, 24, 8.1, 2, 0.6, 0.2, 0.0, 0.2, 0.6, 2, 8.1, 24, 177],
             low: [10, 2, 1.5, 1.3, 1.1, 1, 0.5, 1, 1.1, 1.3, 1.5, 2, 10]
         };
         
         // Sound system
         this.sound = new PlinkoBoop();
+        
+        // Mobile detection
+        this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
         
         this.init();
     }
@@ -712,8 +1043,25 @@ class PlinkoGame {
     resizeCanvas() {
         const wrapper = this.canvas.parentElement;
         const rect = wrapper.getBoundingClientRect();
-        this.canvas.width = rect.width;
-        this.canvas.height = rect.height;
+        
+        // Set canvas resolution based on device pixel ratio for crisp rendering
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = rect.width * dpr;
+        this.canvas.height = rect.height * dpr;
+        
+        // Scale canvas back down using CSS
+        this.canvas.style.width = rect.width + 'px';
+        this.canvas.style.height = rect.height + 'px';
+        
+        // Scale context to match device pixel ratio
+        this.ctx.scale(dpr, dpr);
+        
+        // Store actual dimensions for calculations
+        this.canvasWidth = rect.width;
+        this.canvasHeight = rect.height;
+        
+        // Update mobile detection
+        this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
         
         // Reinitialize board with new dimensions
         if (this.pegs.length > 0) {
@@ -725,21 +1073,29 @@ class PlinkoGame {
         this.pegs = [];
         this.slots = [];
         
-        const width = this.canvas.width;
-        const height = this.canvas.height;
-        const pegRadius = 3;
-        const startY = height * 0.15;
-        const endY = height * 0.85;
+        const width = this.canvasWidth;
+        const height = this.canvasHeight;
+        
+        // Adjust peg size for mobile
+        const pegRadius = this.isMobile ? Math.max(2, width / 150) : 3;
+        
+        // Adjust board margins for mobile
+        const startY = height * (this.isMobile ? 0.12 : 0.15);
+        const endY = height * (this.isMobile ? 0.82 : 0.85);
         const rowHeight = (endY - startY) / this.rows;
         
-        // Create pegs
+        // Create pegs with better mobile spacing
         for (let row = 0; row < this.rows; row++) {
             const pegsInRow = row + 3;
-            const spacing = width / (pegsInRow + 1);
             const y = startY + row * rowHeight;
             
+            // Add padding on mobile to prevent edge clipping
+            const horizontalPadding = this.isMobile ? width * 0.05 : 0;
+            const availableWidth = width - (2 * horizontalPadding);
+            const spacing = availableWidth / (pegsInRow + 1);
+            
             for (let col = 0; col < pegsInRow; col++) {
-                const x = spacing * (col + 1);
+                const x = horizontalPadding + spacing * (col + 1);
                 this.pegs.push({
                     x: x,
                     y: y,
@@ -748,18 +1104,21 @@ class PlinkoGame {
             }
         }
         
-        // Create slots
+        // Create slots with mobile-optimized sizing
         const slotCount = this.rows + 1;
-        const slotWidth = width / (slotCount + 1);
-        const slotY = height * 0.92;
+        const slotPadding = this.isMobile ? width * 0.03 : 0;
+        const slotAreaWidth = width - (2 * slotPadding);
+        const slotWidth = slotAreaWidth / (slotCount + 1);
+        const slotY = height * (this.isMobile ? 0.90 : 0.92);
+        const slotHeight = height * (this.isMobile ? 0.05 : 0.06);
         
         for (let i = 0; i < slotCount; i++) {
-            const x = slotWidth * (i + 1);
+            const x = slotPadding + slotWidth * (i + 1);
             this.slots.push({
                 x: x,
                 y: slotY,
                 width: slotWidth * 0.8,
-                height: height * 0.06,
+                height: slotHeight,
                 index: i,
                 multiplier: this.payouts[this.risk][i]
             });
@@ -767,24 +1126,32 @@ class PlinkoGame {
     }
     
     bindControls() {
-        // Bet buttons
+        // Bet buttons - bind all versions
         document.querySelectorAll('#plinko .bet-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (this.isAutoPlaying) return;
                 
+                // Update all bet buttons (desktop and mobile)
                 document.querySelectorAll('#plinko .bet-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                // Find and activate matching buttons with same data-bet value
+                document.querySelectorAll(`#plinko .bet-btn[data-bet="${btn.dataset.bet}"]`).forEach(b => {
+                    b.classList.add('active');
+                });
                 this.betAmount = parseInt(btn.dataset.bet);
             });
         });
         
-        // Risk buttons
+        // Risk buttons - bind all versions
         document.querySelectorAll('#plinko .risk-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (this.isAutoPlaying) return;
                 
+                // Update all risk buttons (desktop and mobile)
                 document.querySelectorAll('#plinko .risk-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                // Find and activate matching buttons with same data-risk value
+                document.querySelectorAll(`#plinko .risk-btn[data-risk="${btn.dataset.risk}"]`).forEach(b => {
+                    b.classList.add('active');
+                });
                 this.risk = btn.dataset.risk;
                 
                 // Update slot multipliers
@@ -796,9 +1163,8 @@ class PlinkoGame {
             });
         });
         
-        // Play button
-        const playBtn = document.querySelector('#plinko .play-btn');
-        if (playBtn) {
+        // Play buttons - bind ALL play buttons (desktop and mobile)
+        document.querySelectorAll('#plinko .play-btn').forEach(playBtn => {
             playBtn.addEventListener('click', () => {
                 if (this.isAutoPlaying) {
                     this.stopAuto();
@@ -806,9 +1172,9 @@ class PlinkoGame {
                     this.dropBall();
                 }
             });
-        }
+        });
         
-        // Auto buttons
+        // Auto buttons - bind all versions
         document.querySelectorAll('#plinko .auto-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (this.isAutoPlaying) {
@@ -842,13 +1208,15 @@ class PlinkoGame {
         this.stats.ballsDropped++;
         
         // Create ball at random position near top
-        const startX = this.canvas.width / 2 + (Math.random() - 0.5) * 20;
+        const startX = this.canvasWidth / 2 + (Math.random() - 0.5) * 20;
+        const ballRadius = this.isMobile ? Math.max(4, this.canvasWidth / 100) : 5;
+        
         const ball = {
             x: startX,
             y: 30,
             vx: (Math.random() - 0.5) * 0.5,
             vy: 0,
-            radius: 5,
+            radius: ballRadius,
             trail: [],
             landed: false
         };
@@ -862,9 +1230,13 @@ class PlinkoGame {
         this.autoCount = count;
         this.autoRemaining = count;
         
-        // Update UI
-        document.querySelector('#plinko .play-btn').textContent = 'STOP AUTO';
-        document.querySelector('#plinko .play-btn').classList.add('auto-active');
+        // Update ALL play buttons (desktop and mobile)
+        document.querySelectorAll('#plinko .play-btn').forEach(btn => {
+            btn.textContent = 'STOP AUTO';
+            btn.classList.add('auto-active');
+        });
+        
+        // Update auto buttons
         document.querySelectorAll('#plinko .auto-btn').forEach(btn => {
             btn.classList.toggle('active', parseInt(btn.dataset.auto) === count);
         });
@@ -877,9 +1249,13 @@ class PlinkoGame {
         this.isAutoPlaying = false;
         this.autoRemaining = 0;
         
-        // Update UI
-        document.querySelector('#plinko .play-btn').textContent = 'DROP BALL';
-        document.querySelector('#plinko .play-btn').classList.remove('auto-active');
+        // Update ALL play buttons (desktop and mobile)
+        document.querySelectorAll('#plinko .play-btn').forEach(btn => {
+            btn.textContent = 'DROP BALL';
+            btn.classList.remove('auto-active');
+        });
+        
+        // Clear all auto button active states
         document.querySelectorAll('#plinko .auto-btn').forEach(btn => {
             btn.classList.remove('active');
         });
@@ -909,14 +1285,14 @@ class PlinkoGame {
     }
     
     updateAutoCounter() {
-        const counter = document.querySelector('#plinko .auto-counter');
-        if (counter) {
+        // Update ALL auto counters (desktop and mobile)
+        document.querySelectorAll('#plinko .auto-counter').forEach(counter => {
             if (this.isAutoPlaying) {
                 counter.textContent = `${this.autoRemaining} / ${this.autoCount}`;
             } else {
                 counter.textContent = '';
             }
-        }
+        });
     }
     
     updateBall(ball) {
@@ -970,13 +1346,14 @@ class PlinkoGame {
             ball.x = ball.radius;
             ball.vx = Math.abs(ball.vx) * this.bounciness;
         }
-        if (ball.x + ball.radius > this.canvas.width) {
-            ball.x = this.canvas.width - ball.radius;
+        if (ball.x + ball.radius > this.canvasWidth) {
+            ball.x = this.canvasWidth - ball.radius;
             ball.vx = -Math.abs(ball.vx) * this.bounciness;
         }
         
         // Check if ball reached slots
-        if (ball.y > this.canvas.height * 0.88) {
+        const slotThreshold = this.canvasHeight * (this.isMobile ? 0.86 : 0.88);
+        if (ball.y > slotThreshold) {
             // Find which slot
             for (const slot of this.slots) {
                 if (Math.abs(ball.x - slot.x) < slot.width / 2) {
@@ -988,7 +1365,7 @@ class PlinkoGame {
         }
         
         // Remove if fell off screen
-        if (ball.y > this.canvas.height) {
+        if (ball.y > this.canvasHeight) {
             ball.landed = true;
         }
     }
@@ -1045,12 +1422,12 @@ class PlinkoGame {
     
     draw() {
         // Clear canvas
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         
-        // Draw pegs
+        // Draw pegs with mobile-optimized rendering
         this.ctx.fillStyle = '#7b2ff7';
         this.ctx.shadowColor = '#7b2ff7';
-        this.ctx.shadowBlur = 10;
+        this.ctx.shadowBlur = this.isMobile ? 5 : 10;
         
         for (const peg of this.pegs) {
             this.ctx.beginPath();
@@ -1060,7 +1437,7 @@ class PlinkoGame {
         
         this.ctx.shadowBlur = 0;
         
-        // Draw slots
+        // Draw slots with mobile-friendly text
         for (const slot of this.slots) {
             // Determine color based on multiplier
             let color;
@@ -1080,9 +1457,10 @@ class PlinkoGame {
                 slot.height
             );
             
-            // Draw multiplier text
+            // Draw multiplier text - smaller on mobile
             this.ctx.fillStyle = '#fff';
-            this.ctx.font = 'bold 10px Arial';
+            const fontSize = this.isMobile ? Math.max(8, this.canvasWidth / 50) : 10;
+            this.ctx.font = `bold ${fontSize}px Arial`;
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
             this.ctx.fillText(
@@ -1096,7 +1474,7 @@ class PlinkoGame {
         for (const ball of this.balls) {
             // Draw trail
             this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-            this.ctx.lineWidth = 2;
+            this.ctx.lineWidth = this.isMobile ? 1 : 2;
             this.ctx.beginPath();
             for (let i = 0; i < ball.trail.length; i++) {
                 const point = ball.trail[i];
