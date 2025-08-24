@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BearSpin™ - Where Your Money Goes to Hibernate Forever</title>
+  <meta name="description" content="Join BearSpin Slots Casino today and experience the thrill of 200% RTP and never being able to redeem!*" />
+  
+<!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
+  <!-- Essential Meta Tags -->
+  <meta name="author" content="BearSpin Entertainment">
+  <meta name="keywords" content="bearspin referral, casino parody, sweepstakes satire, comedy, entertainment">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ffd700">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bearspinslots.com/refer-b2a8ec75abf9.html">
+  <meta property="og:title" content="🎰 You've Been Invited to BearSpin™ - Get 50 FREE BearCoins!">
+  <meta property="og:description" content="Your friend wants you to join BearSpin Slots Casino! Join now for 50 FREE BearCoins and experience 200%+ RTP! 🐻💸">
+  <meta property="og:image" content="https://bearspinslots.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="BearSpin Slots Casino">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🎰 You've Been Invited to BearSpin™!">
+  <meta name="twitter:description" content="Get 50 FREE BearCoins when you join NOW!">
+  <meta name="twitter:image" content="https://bearspinslots.com/og-image.png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Bangers&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --neon-pink: #ff0080;
+      --neon-purple: #8e2de2;
+      --neon-cyan: #00f7ff;
+      --gold: #ffd700;
+      --dark-bg: #0a0014;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0a0014 0%, #1a0033 50%, #0a0014 100%);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(142, 45, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 0, 128, 0.1) 0%, transparent 50%);
+      animation: bgPulse 10s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes bgPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Sparkles Background */
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: sparkleFloat 15s linear infinite;
+    }
+
+    .sparkle:nth-child(odd) {
+      width: 2px;
+      height: 2px;
+      animation-duration: 20s;
+    }
+
+    .sparkle:nth-child(3n) {
+      animation-duration: 25s;
+      background: var(--neon-cyan);
+    }
+
+    .sparkle:nth-child(5n) {
+      animation-duration: 18s;
+      background: var(--gold);
+    }
+
+    @keyframes sparkleFloat {
+      0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(90vh) translateX(10px) scale(1);
+      }
+      90% {
+        opacity: 1;
+        transform: translateY(10vh) translateX(-10px) scale(1);
+      }
+      100% {
+        transform: translateY(-10vh) translateX(0) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Coin Rain Effect */
+    .coin-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+    }
+
+    .coin-rain.active {
+      display: block;
+    }
+
+    .coin {
+      position: absolute;
+      font-size: 2rem;
+      animation: coinFall 2s linear forwards;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    }
+
+    @keyframes coinFall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(calc(100vh + 100px)) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: linear-gradient(90deg, #ff0080, #8e2de2);
+      padding: 1rem;
+      text-align: center;
+      font-weight: 900;
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      animation: rainbowShift 3s linear infinite;
+      background-size: 200% 200%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(3rem, 8vw, 5rem);
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .logo-text {
+      background: linear-gradient(45deg, var(--gold), var(--neon-pink), var(--neon-cyan));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGlitch 5s infinite;
+    }
+
+    @keyframes textGlitch {
+      0%, 100% { text-shadow: 0 0 40px rgba(0, 247, 255, 0.5); }
+      25% { text-shadow: -2px 0 var(--neon-pink), 2px 0 var(--neon-cyan); }
+      50% { text-shadow: 2px 0 var(--gold), -2px 0 var(--neon-purple); }
+      75% { text-shadow: 0 0 40px rgba(255, 0, 128, 0.5); }
+    }
+
+    .bear-emoji {
+      font-size: clamp(3rem, 8vw, 4rem);
+      display: inline-block;
+      animation: spin 3s linear infinite;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .headline {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 900;
+      margin: 1rem 0;
+      color: var(--gold);
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+
+    .subheadline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: var(--neon-cyan);
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+    .subheadline small {
+      display: block;
+      font-size: 0.8em;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+
+    .warning-box {
+      background: rgba(255, 0, 0, 0.2);
+      border: 2px solid #ff0000;
+      border-radius: 15px;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      animation: warningPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes warningPulse {
+      0%, 100% { border-color: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+      50% { border-color: #ff6666; box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); }
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #ff0080, #8e2de2);
+      color: #fff;
+      border: 3px solid var(--gold);
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      animation: ctaPulse 1s ease-in-out infinite;
+      text-decoration: none;
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+    }
+
+    .mascot {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(255, 0, 128, 0.4));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Features Section */
+    .features {
+      background: rgba(142, 45, 226, 0.1);
+      padding: 4rem 2rem;
+      border-top: 2px solid var(--neon-purple);
+      border-bottom: 2px solid var(--neon-purple);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, var(--neon-pink), var(--gold));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 247, 255, 0.1));
+      border: 2px solid var(--neon-purple);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 247, 255, 0.4);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-title {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+    }
+
+    .feature-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 0, 128, 0.1));
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .mascot2 {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 247, 255, 0.4));
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-30px) rotate(-5deg); }
+    }
+
+    .cta-copy p {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--neon-cyan);
+      margin: 1rem 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 3rem 2rem;
+      border-top: 2px solid var(--gold);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+
+    .footer-col h4 {
+      color: var(--neon-cyan);
+      margin-bottom: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .footer-link {
+      display: block;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0.5rem 0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .footer-link:hover {
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      transform: translateX(5px);
+    }
+
+    .legal {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Popup */
+    .scam-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #ff0080, #8e2de2);
+      border: 3px solid var(--gold);
+      border-radius: 20px;
+      padding: 1.5rem;
+      width: min(90%, 300px);
+      z-index: 10000;
+      display: none;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(400px); }
+      to { transform: translateX(0); }
+    }
+
+    .scam-popup.show {
+      display: block;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .popup-close:hover {
+      transform: rotate(90deg);
+    }
+
+    .scam-popup h3 {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .scam-popup ul {
+      text-align: left;
+      margin: 1rem 0;
+      padding-left: 1rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero-grid, .cta-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .hero-copy {
+        order: 2;
+      }
+      
+      .hero-art {
+        order: 1;
+        margin-bottom: 2rem;
+      }
+      
+      .mascot, .mascot2 {
+        margin: 0 auto;
+        max-width: 300px;
+      }
+
+      .cta-btn {
+        display: block;
+        width: 90%;
+        margin: 0.5rem auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .scam-popup {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar {
+        font-size: 0.8rem;
+        padding: 0.8rem 0.5rem;
+      }
+
+      .logo {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .warning-box {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
+
+    /* High DPI Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .mascot, .mascot2 {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sparkles Background -->
+  <div class="sparkles" id="sparklesContainer"></div>
+
+  <!-- Coin Rain Container -->
+  <div class="coin-rain" id="coinRain"></div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    🚨 NEW! - MANDATORY PROGRESSIVE SITEWIDE JACKPOT!: -0.10 SC with every Click, Swipe, Scroll, or Tap! 🚨
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="logo">
+            <span class="bear-emoji">🐻</span>
+            <span class="logo-text">BearSpin™</span>
+          </div>
+          <h1 class="headline">Where Dreams Go to Hibernate!</h1>
+          <p class="subheadline">Experience the thrill of 200% RTP*
+            <small>*Redemption times may vary</small>
+          </p>
+          
+          <div class="warning-box">
+            ⚠️ <strong>WARNING:</strong> Some features still under construction 
+          </div>
+
+          <a href="https://bearspinslots.com" class="cta-btn">JOIN NOW!</a>
+          <a href="https://bearspinslots.com" class="cta-btn" style="background: linear-gradient(135deg, #666, #333);">EXISTING PLAYER? LOG IN</a>
+        </div>
+        
+        <aside class="hero-art">
+          <img class="mascot" src="bsmascot1.png" alt="Happy person who hasn't realized they can't withdraw yet">
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Experience exciting features!</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💸</div>
+          <h3 class="feature-title">200% RTP!+</h3>
+          <p class="feature-text">Keep spinning and watch as your balance rises! Numbers mean nothing when redeems don't work!</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎰</div>
+          <h3 class="feature-title">Several working games!</h3>
+          <p class="feature-text">Exciting originals such as Joker's Paw, BearJack, and PLUNKO!</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3 class="feature-title">Refer-a-friend bonus!</h3>
+          <p class="feature-text">Win big when you invite your friends! They may hate you for it but get 100 Bearcoins for every player invited!</p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-grid">
+        <aside class="cta-art">
+          <img class="mascot2" src="bsmascot2.png" alt="Another happy victim">
+        </aside>
+        <div class="cta-copy">
+          <h2 class="section-title">It's ALWAYS expensive to play!</h2>
+          <p>No purchase required - pay with your sanity! Good luck!</p>
+          <div class="warning-box">
+            <strong>WOW!</strong> Check out our state of the art AI Support Bot BearyCare!
+          </div>
+          <a href="https://bearspinslots.com" class="cta-btn">
+            FIND OUT MORE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="https://bearspinslots.com/" class="footer-link">Terms of Service</a>
+        <a href="https://bearspinslots.com/" class="footer-link">Privacy Policy</a>
+        <a href="https://bearspinslots.com/" class="footer-link">Responsible Gaming</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="https://bearspinslots.com/" class="footer-link">Help Center</a>
+        <a href="https://bearspinslots.com/" class="footer-link">Contact Us</a>
+        <a href="https://bearspinslots.com/" class="footer-link">Redeem Info</a>
+      </div>
+    </div>
+    
+    <div class="legal">
+      <p><strong>⚠️ LEGAL DISCLAIMER ⚠️</strong></p>
+      <p>This is a PARODY SITE. Not a real casino. No actual money can be deposited, wagered, won, lost, or redeemed here. 
+      This is purely satirical content </p>
+      <p>BearSpin™ is a trademark of Nobody Because This Isn't Real, LLC. 
+      All rights reversed. No purchase necessary because purchases are impossible.</p>
+      <p style="margin-top: 1rem; font-size: 1.2rem; color: var(--gold);">
+       Powered by DOGTECH</p>
+    </div>
+  </footer>
+
+  <!-- Scam Popup -->
+  <div class="scam-popup" id="scamPopup">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <h3>🎰 WOAH! </h3>
+    <p>You've been selected for our exclusive Beary Big Welcome Offer!</p>
+    <p style="margin-top: 1rem; color: var(--neon-cyan);">Join now and get:</p>
+    <ul style="text-align: left; margin: 1rem 0;">
+      <li>✓ 50 BEARCOINS</li>
+      <li>✓ 700 Gold Coins</li>
+      <li>✓ Access to AI Support Bot</li>
+      
+    </ul>
+    <a href="https://bearspinslots.com" class="cta-btn" style="width: 100%; margin: 0; font-size: 1rem; padding: 1rem; text-align: center;">
+      CLAIM BONUS
+    </a>
+  </div>
+
+  <script>
+    // Create sparkles on load
+    function createSparkles() {
+      const container = document.getElementById('sparklesContainer');
+      const sparkleCount = window.innerWidth > 768 ? 50 : 30;
+      
+      for (let i = 0; i < sparkleCount; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 20 + 's';
+        sparkle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        container.appendChild(sparkle);
+      }
+    }
+    createSparkles();
+
+    // Coin rain effect on link hover
+    function createCoin(x, y) {
+      const coinRain = document.getElementById('coinRain');
+      const coin = document.createElement('div');
+      coin.className = 'coin';
+      coin.textContent = '🪙';
+      coin.style.left = x + 'px';
+      coin.style.top = y + 'px';
+      coin.style.animationDelay = Math.random() * 0.5 + 's';
+      coinRain.appendChild(coin);
+      
+      setTimeout(() => coin.remove(), 2000);
+    }
+
+    function triggerCoinRain(e) {
+      const coinRain = document.getElementById('coinRain');
+      coinRain.classList.add('active');
+      
+      // Create multiple coins
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const x = e.clientX + (Math.random() - 0.5) * 100;
+          const y = e.clientY - 50;
+          createCoin(x, y);
+        }, i * 100);
+      }
+      
+      setTimeout(() => {
+        if (coinRain.children.length === 0) {
+          coinRain.classList.remove('active');
+        }
+      }, 2500);
+    }
+
+    // Add coin rain to all links
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('mouseenter', triggerCoinRain);
+    });
+
+    // Show popup after 3 seconds
+    setTimeout(() => {
+      document.getElementById('scamPopup').classList.add('show');
+    }, 3000);
+
+    function closePopup() {
+      document.getElementById('scamPopup').classList.remove('show');
+      // Show it again after 10 seconds because we're annoying
+      setTimeout(() => {
+        document.getElementById('scamPopup').classList.add('show');
+      }, 10000);
+    }
+
+    // Random "jackpot" alerts in console
+    setInterval(() => {
+      const messages = [
+        'You just lost 50 SC to the mandatory jackpot fee!',
+        'Withdrawal system maintenance extended indefinitely!',
+        'Congratulations! You won nothing!',
+        'Your balance has been donated to our CEO vacation fund!',
+        'Error: Winning not found'
+      ];
+      console.log('🐻 BearSpin Says: ' + messages[Math.floor(Math.random() * messages.length)]);
+    }, 30000);
+
+    // Console warnings
+    console.log('%c⚠️ WARNING ⚠️', 'color: red; font-size: 30px; font-weight: bold;');
+    console.log('%cThis is a parody site! Do not attempt to deposit real money!', 'color: yellow; font-size: 16px;');
+    console.log('%cSeriously, the withdrawal button has been commented out since day one.', 'color: orange; font-size: 14px;');
+
+    // Responsive sparkles on window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        document.getElementById('sparklesContainer').innerHTML = '';
+        createSparkles();
+      }, 250);
+    });
+  </script>
+</body>
+</html>

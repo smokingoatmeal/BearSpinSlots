@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BearSpin Slots Casino - Where Dreams Go to Hibernate</title>
+  <meta name="description" content="BearSpin Slots Casino — Redemption Declined! This is a satirical, parody website created for entertainment purposes only. This is not a real casino. No gambling, redemptions, or purchases occur on this site. 100% fake. 100% fun." />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;600;800;900&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+<!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  
+  <!-- Essential Meta Tags -->
+  <meta name="author" content="BearSpin Entertainment">
+  <meta name="keywords" content="bearspin, casino parody, satire, sweepstakes parody, entertainment, comedy casino">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#ff0080">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bearspinslots.com/">
+  <meta property="og:title" content="BearSpin Slots Casino™ - Where Dreams Go to Hibernate!">
+  <meta property="og:description" content="Experience the thrill of 200% RTP*! (*Redemption times may vary indefinitely)">
+  <meta property="og:image" content="https://bearspinslots.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BearSpin Casino - Redemption Declined!">
+  <meta property="og:site_name" content="BearSpin Slots Casino">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bearspinslots.com/">
+  <meta name="twitter:title" content="BearSpin Slots Casino™ - Where Dreams Go to Hibernate!">
+  <meta name="twitter:description" content="Experience the thrill of 200% RTP*!">
+  <meta name="twitter:image" content="https://bearspinslots.com/og-image.png">
+  <meta name="twitter:image:alt" content="BearSpin Casino Parody">
+  <meta name="twitter:creator" content="@bearspinslots">
+  
+
+</head>
+<body>
+  <!-- Animated Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Massive Confetti Container -->
+  <div class="massive-confetti" id="massiveConfetti"></div>
+
+  <!-- Fixed Header -->
+  <header>
+    <div class="logo" id="logoMenu">
+      <div class="hamburger-icon">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+      <span class="bear-emoji">🐻</span>
+      <span class="logo-text">BEARSPIN</span>
+    </div>
+    <div class="user-section">
+      <!-- Daily Spin Button -->
+      <button class="daily-spin-btn" id="dailySpinBtn">
+        <span class="daily-spin-icon">🎡</span>
+        <span class="daily-spin-text">Daily Bearspin!</span>
+      </button>
+      
+      <div class="coin-balance" id="coinBalance">
+        <div class="coin-toggle">
+          <div class="coin-icon gold active" id="goldCoin" title="Gold Coins">GC</div>
+          <div class="coin-icon sweeps" id="sweepsCoin" title="Sweeps Coins">BC</div>
+        </div>
+        <span class="balance-amount gold active" id="goldBalance">700</span>
+        <span class="balance-amount sweeps" id="sweepsBalance">50.00</span>
+        <div class="coin-switch" id="coinSwitch" title="Switch Currency">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="user-profile">
+        <div class="user-avatar">🎰</div>
+        <div class="user-info">
+          <span class="user-name">Guest_Lucky777</span>
+          <span class="user-status">High Roller</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Daily Spin Error Popup -->
+  <div class="prize-popup" id="dailySpinErrorPopup">
+    <div class="prize-content">
+      <button class="prize-close" id="dailySpinErrorClose">×</button>
+      <h3 class="prize-title" id="dailySpinErrorTitle">ONE SPIN PER DAY!</h3>
+      <div class="prize-icon" id="dailySpinErrorIcon">😠</div>
+      <p class="prize-message" id="dailySpinErrorMessage">
+        Hey cool it bud! You already had your spin!<br><br>
+        <button class="chat-action-btn" onclick="document.getElementById('dailySpinErrorPopup').classList.remove('show'); document.getElementById('coinShopPopup').classList.add('show');">BUY SOME BEARCOINS! CLICK HERE!</button>
+      </p>
+    </div>
+  </div>
+
+<!-- Daily BearSpin Wheel Modal -->
+<div class="daily-wheel-modal" id="dailyWheelModal">
+  <div class="daily-wheel-container">
+    <button class="daily-wheel-close" id="dailyWheelClose">×</button>
+    <h2 class="daily-wheel-title">🎰 DAILY BEARSPIN </h2>
+    <div class="daily-wheel-subtitle">One free spin per day!</div>
+    
+    <div class="daily-wheel-wrapper">
+      <div class="daily-wheel-viewport">
+        <div class="daily-wheel-pointer">👉</div>
+        <div class="daily-wheel-pointer-right">👈</div>
+        <div class="daily-wheel-reel" id="dailyWheelReel">
+          <!-- Prizes will be duplicated for smooth scrolling -->
+          <div class="daily-prize-item" data-prize="5gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">5 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="10gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">10 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="25gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">25 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="50gc">
+            <span class="prize-emoji">💰</span>
+            <span class="prize-text">50 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="100gc">
+            <span class="prize-emoji">💰</span>
+            <span class="prize-text">100 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="0.5sc">
+            <span class="prize-emoji">💚</span>
+            <span class="prize-text">0.5 BC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="1sc">
+            <span class="prize-emoji">💚</span>
+            <span class="prize-text">1 BC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="2sc">
+            <span class="prize-emoji">💎</span>
+            <span class="prize-text">2 BC</span>
+          </div>
+          <!-- Duplicate for smooth scrolling -->
+          <div class="daily-prize-item" data-prize="5gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">5 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="10gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">10 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="25gc">
+            <span class="prize-emoji">🪙</span>
+            <span class="prize-text">25 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="50gc">
+            <span class="prize-emoji">💰</span>
+            <span class="prize-text">50 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="100gc">
+            <span class="prize-emoji">💰</span>
+            <span class="prize-text">100 GC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="0.5sc">
+            <span class="prize-emoji">💚</span>
+            <span class="prize-text">0.5 BC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="1sc">
+            <span class="prize-emoji">💚</span>
+            <span class="prize-text">1 BC</span>
+          </div>
+          <div class="daily-prize-item" data-prize="2sc">
+            <span class="prize-emoji">💎</span>
+            <span class="prize-text">2 BC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="daily-wheel-spin-btn" id="dailyWheelSpinBtn">
+      SPIN NOW!
+    </button>
+    
+    <div class="daily-wheel-result" id="dailyWheelResult">
+      <div class="result-emoji">🎉</div>
+      <div class="result-text">You won <span id="prizeAmount"></span>!</div>
+    </div>
+  </div>
+</div>
+
+  <!-- Navigation Menu -->
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+      <h3 class="nav-menu-title">🎰 Menu</h3>
+      <button class="nav-close" id="navClose">×</button>
+    </div>
+    <div class="nav-menu-items">
+      <button class="nav-item-store" data-action="store">
+        <span class="nav-icon">💰</span>
+        <span>BEARSPIN STORE - BUY MORE COINS!</span>
+      </button>
+      <button class="nav-item-redeem" data-action="redeem">
+        <span class="nav-icon"></span>
+        <span>Redeem</span>
+      </button>
+      <button class="nav-item" data-action="slots">
+        <span class="nav-icon">🎰</span>
+        <span class="nav-text">Slots</span>
+      </button>
+      <button class="nav-item" data-action="promotions">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-text">Promotions</span>
+      </button>
+      <button class="nav-item" data-action="refer">
+        <span class="nav-icon">👥</span>
+        <span class="nav-text">Refer-a-Friend</span>
+      </button>
+      <button class="nav-item" data-action="responsible">
+        <span class="nav-icon">🛡️</span>
+        <span class="nav-text">Responsible Gaming</span>
+      </button>
+      <button class="nav-item" data-action="support">
+        <span class="nav-icon">💬</span>
+        <span class="nav-text">Live Support</span>
+      </button>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Diamond Counter - UPDATED -->
+  <div class="diamond-counter">
+    <div class="diamond-icon">💎</div>
+    <div class="diamond-info">
+      <div class="diamond-count" id="diamondCount">0</div>
+      <div class="diamond-label">Diamonds (0/10)</div>
+      <div class="diamond-hint">Collect 10 to unlock Scratch n Rinse!</div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="bs.png" alt="BearSpin Logo" class="hero-logo">
+      <h2>Where Dreams Go to Hibernate!</h2>
+      <p class="hero-subtitle">A next-gen sweepstakes casino designed for hustlers, <em>by hustlers</em>.</p>
+      <button class="scratch-btn-mega" id="scratchBtn">
+        <span class="btn-store-label">🪙 BEARSPIN STORE 🪙</span>
+        <span class="btn-shop-text">Buy BearCoins</span>
+        <span class="btn-subtitle">Get rich or cry trying!</span>
+        <div class="coin-rain">
+          <span class="rain-coin" style="left: 10%; animation-delay: 0s;">🪙</span>
+          <span class="rain-coin" style="left: 20%; animation-delay: 0.2s;">💰</span>
+          <span class="rain-coin" style="left: 30%; animation-delay: 0.4s;">🪙</span>
+          <span class="rain-coin" style="left: 40%; animation-delay: 0.6s;">💰</span>
+          <span class="rain-coin" style="left: 50%; animation-delay: 0.8s;">🪙</span>
+          <span class="rain-coin" style="left: 60%; animation-delay: 1s;">💰</span>
+          <span class="rain-coin" style="left: 70%; animation-delay: 0.3s;">🪙</span>
+          <span class="rain-coin" style="left: 80%; animation-delay: 0.5s;">💰</span>
+          <span class="rain-coin" style="left: 90%; animation-delay: 0.7s;">🪙</span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games-section">
+    <h3 class="section-title">Featured Games!</h3>
+    <div class="games-grid">
+      <div class="game-card">
+        <img src="honey-roll.webp" alt="Honey Roll">
+      </div>
+      
+<div class="game-card" data-game="jokerspaw">
+    <img src="jokers-paw.webp" alt="Joker's Paw">
+</div>
+<div class="game-card" data-game="bearjack">
+    <img src="bearjack.png" alt="BearJack">
+</div>
+<div class="game-card" data-game="plinko">
+    <img src="plinko.webp" alt="Plinko">
+</div>
+      </section>
+
+<p></p>
+
+<h3 class="section-title">Coming soon!</h3>
+    <div class="games-grid">
+      <div class="game-card">
+        <img src="dog-water-megaways.webp" alt="Dog Water Megaways">
+      </div>
+<div class="game-card">
+        <img src="woof-gold.webp" alt="Woof Gold">
+      </div>
+      <div class="game-card">
+        <img src="rugs-of-olympus-1000.webp" alt="Rugs of Olympus 1000">
+      </div>
+      <div class="game-card">
+        <img src="big-bear-bamboozle.webp" alt="Big Bear Bamboozle">
+      </div>
+      <div class="game-card">
+        <img src="yeet-bonanza-1000.webp" alt="Yeet Bonanza 1000">
+      </div>
+      <div class="game-card">
+        <img src="bear-dogg-dollars.webp" alt="Bear Dogg Dollars">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section - UPDATED -->
+
+
+  <section class="features-section">
+    <h3 class="section-title"> Revolutionary Features!</h3>
+    
+<div class="jackpot-info-section">
+      <span class="jackpot-info-emoji">🎰</span>
+      <h4 class="feature-title">NEW!: Mandatory Sitewide Progressive Jackpot</h4>
+      <p class="feature-description">
+        Every click, tap, scroll, or interaction with the site automatically enters you into our Progressive Jackpot! 
+        The more you interact, the better your chances. And here's the best part - losing Bearcoins actually <em>increases</em> 
+        your odds of hitting the jackpot! We've done you a favor and made it mandatory, so you can't opt out - 
+        meaning you'll never miss a chance to win!
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-emoji">🎯</span>
+      <h4 class="feature-title">Retention Bonus 'Rakeback' Algorithm</h4>
+      <p class="feature-description">
+        Accounts experiencing statistically 'lucky' streaks are auto-awarded diamonds! 
+        Win 5 Bearcoins = 1 diamond. Collect 10 diamonds to unlock our exclusive Scratch n Rinse cards!
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-emoji">🎡</span>
+      <h4 class="feature-title">Transparency Through Gamification</h4>
+      <p class="feature-description">
+        We gamify our fee structure! All redemptions are subject to our exciting "FeeChance" wheel - 
+        an engaging way to determine processing fees while keeping the experience fun and user-centric!
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-emoji">🛡️</span>
+      <h4 class="feature-title">DogShield™ Redemption Insurance</h4>
+      <p class="feature-description">
+        In the likely scenario that your redemption is delayed or denied, DogShield™ Redemption Insurance 
+        will automatically refund your redemption back to your play balance, so you don't have to worry 
+        about your redemption and you can keep spinning!
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-emoji">📈</span>
+      <h4 class="feature-title">Tiered Engagement Loyalty System</h4>
+      <p class="feature-description">
+        Progress through our loyalty tiers not by how much you play - but by how much you lose! 
+        Every loss gets you closer to unlocking exclusive features such as <em>premium support response times</em> 
+        and <em>discounted redemption fees</em>!
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-emoji">🎲</span>
+      <h4 class="feature-title">Exciting Dynamic Playthrough System</h4>
+      <p class="feature-description">
+        Our proprietary playthrough algorithm is designed to make every purchase a surprise, 
+        with variable dynamic playthrough rates that range from 1x to 100x. 
+        You won't know until you try to redeem!
+      </p>
+    </div>
+
+    
+  </section>
+
+  <!-- BearyCase Section -->
+  <section class="bearycare-section">
+    <h3 class="section-title"> Responsible Gaming with BearyCare™</h3>
+    <div class="bearycare-content">
+      <div class="bearycare-text">
+        <p><strong>Introducing: BearyCare™ — Our Responsible Gaming Initiative</strong></p>
+        <p>At BearSpin Slots Casino, your emotional wellbeing is our top priority. That's why we've launched BearyCare™, 
+        a state-of-the-art emotional support AI chatbot designed to keep you grounded during your gaming journey.</p>
+        <div class="quote">
+          "Hey buddy, that was just bad variance. You were so close! Want to try again with a $25 reload bonus?"
+        </div>
+        <p>BearyCare™ is more than a bot - it's our commitment to responsible gaming!</p>
+      </div>
+      <img class="bearycare-img" src="bearycare-original.png" alt="BearyCare Bot">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BearSpin Slots Casino™ • Not registered anywhere • For entertainment and parody purposes only • This is <strong>not</strong> a real casino, no money can be spent here, nothing can be purchased and nothing can be redeemed.</p>
+    <div class="footer-links">
+      <a href="https://reddit.com/r/SweepstakesSideHustle" target="_blank">r/SweepstakesSideHustle</a>
+      <a href="https://sweepsfort.com" target="_blank">Main Site</a>
+      <a href="https://discord.com/invite/R54f9RgDZg" target="_blank">Discord</a>
+    </div>
+  </footer>
+
+  <!-- Progressive Jackpot Bar -->
+  <div class="jackpot-bar" id="jackpotBar">
+    <div class="jackpot-bar-content">
+      <div class="jackpot-bar-title">
+        <span class="jackpot-emoji">🎰</span>
+        <span>MANDATORY SITEWIDE PROGRESSIVE JACKPOT</span>
+        <span class="jackpot-emoji">🎰</span>
+      </div>
+      <span class="jackpot-cost">💸 0.10 Bearcoins entry per click, tap, or scroll! 💸</span>
+      <button class="opt-out-btn" id="optOutBtn">
+        OPT-OUT
+        <span class="red-x">❌</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Opt-out Bubble -->
+  <div class="opt-out-bubble" id="optOutBubble">
+    🐻 Always opted-in, so you never miss a chance to win!
+  </div>
+
+  <!-- Jackpot Popup Window -->
+  <div class="jackpot-popup" id="jackpotPopup">
+    <button class="jackpot-close" id="jackpotClose">×</button>
+    <div class="jackpot-popup-header">
+      <h2 class="jackpot-popup-title">
+        <span style="filter: none; display: inline-block;">🎯</span>
+        <span style="margin: 0 1rem;">JACKPOT</span>
+        <span style="filter: none; display: inline-block;">🎯</span>
+      </h2>
+    </div>
+    
+    <div class="jackpot-grid">
+      <!-- BC Grand Jackpot -->
+      <div class="jackpot-item">
+        <div class="jackpot-type">
+          <span class="jackpot-label grand">BC GRAND</span>
+          <span class="jackpot-timer">Last won 3 hours ago</span>
+        </div>
+        <div class="jackpot-amount" data-jackpot="grand">109,973.20</div>
+        <div class="jackpot-currency">Sweepstakes Coins</div>
+        <div class="jackpot-winner">
+          <span class="jackpot-winner-label">Last Winner:</span>
+          <span class="jackpot-winner-name">Beary B.</span>
+          <span class="winner-sparkle">✨</span>
+        </div>
+      </div>
+      
+      <!-- SC Major Jackpot -->
+      <div class="jackpot-item">
+        <div class="jackpot-type">
+          <span class="jackpot-label major">BC MAJOR</span>
+          <span class="jackpot-timer">Last won 12 minutes ago</span>
+        </div>
+        <div class="jackpot-amount" data-jackpot="major">1,296.95</div>
+        <div class="jackpot-currency">Sweepstakes Coins</div>
+        <div class="jackpot-winner">
+          <span class="jackpot-winner-label">Last Winner:</span>
+          <span class="jackpot-winner-name">Beary B.</span>
+          <span class="winner-sparkle">✨</span>
+        </div>
+      </div>
+      
+      <!-- SC Minor Jackpot -->
+      <div class="jackpot-item">
+        <div class="jackpot-type">
+          <span class="jackpot-label minor">BC MINOR</span>
+          <span class="jackpot-timer">Last won 17 minutes ago</span>
+        </div>
+        <div class="jackpot-amount" data-jackpot="minor">726.83</div>
+        <div class="jackpot-currency">Sweepstakes Coins</div>
+        <div class="jackpot-winner">
+          <span class="jackpot-winner-label">Last Winner:</span>
+          <span class="jackpot-winner-name">Beary B.</span>
+          <span class="winner-sparkle">✨</span>
+        </div>
+      </div>
+      
+      <!-- SC Mini Jackpot -->
+      <div class="jackpot-item">
+        <div class="jackpot-type">
+          <span class="jackpot-label mini">BC MINI</span>
+          <span class="jackpot-timer">Last won 1 minute ago</span>
+        </div>
+        <div class="jackpot-amount" data-jackpot="mini">82.47</div>
+        <div class="jackpot-currency">Sweepstakes Coins</div>
+        <div class="jackpot-winner">
+          <span class="jackpot-winner-label">Last Winner:</span>
+          <span class="jackpot-winner-name">Beary B.</span>
+          <span class="winner-sparkle">✨</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coin Shop Popup - UPDATED -->
+  <div class="popup" id="coinShopPopup">
+    <div class="popup-content">
+      <button class="close-x" id="closeCoinShop">×</button>
+      <h2 class="popup-title">Select the coin package</h2>
+      
+      <!-- Scratch n Rinse Section - UPDATED -->
+      <div class="scratch-promo">
+        <div class="scratch-header">
+          <span class="scratch-icon">💦</span>
+          <div>
+            <div class="scratch-title">SCRATCH N RINSE!</div>
+            <div class="scratch-subtitle">Win BC to unlock exclusive Cards</div>
+          </div>
+        </div>
+        <div class="scratch-highlight-box">
+          <div class="scratch-info">
+            The more you win the more you get! Every 5 BC won = 1 diamond!
+          </div>
+        </div>
+        <div class="diamond-progress">
+          <span class="diamond-progress-icon">💎</span>
+          <span class="diamond-progress-text" id="diamondProgressText">0 / 10 collected</span>
+          <div class="diamond-progress-bar">
+            <div class="diamond-progress-fill" id="diamondProgressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+        <button class="scratch-card-btn" id="scratchCardBtn" style="display: none;">SCRATCH ME!</button>
+      </div>
+      
+      <!-- Coin Packages -->
+      <div class="coin-packages">
+        <div class="coin-pack best-deal">
+          <span class="pack-badge badge-best">BEST DEAL</span>
+          <div class="pack-content">
+            <div class="pack-coins">
+              <div class="coin-amount">
+                <span class="coin-emoji">🪙</span>
+                <span>2,000,000</span>
+              </div>
+              <div class="bonus-coins">
+                <span class="sc-icon">💚</span>
+                <span>100.00 FOR FREE</span>
+              </div>
+            </div>
+            <div class="pack-price">
+              <div class="price-current">$ 49.99</div>
+              <div class="price-original">was $100.00</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coin-pack hot-deal">
+          <span class="pack-badge badge-hot">HOT</span>
+          <div class="pack-content">
+            <div class="pack-coins">
+              <div class="coin-amount">
+                <span class="coin-emoji">🪙</span>
+                <span>1,050,000</span>
+              </div>
+              <div class="bonus-coins">
+                <span class="sc-icon">💚</span>
+                <span>60.00 FOR FREE</span>
+              </div>
+            </div>
+            <div class="pack-price">
+              <div class="price-current">$ 29.99</div>
+              <div class="price-original">was $60.00</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coin-pack most-popular">
+          <span class="pack-badge badge-popular">MOST POPULAR</span>
+          <div class="pack-content">
+            <div class="pack-coins">
+              <div class="coin-amount">
+                <span class="coin-emoji">🪙</span>
+                <span>875,000</span>
+              </div>
+              <div class="bonus-coins">
+                <span class="sc-icon">💚</span>
+                <span>50.00 FOR FREE</span>
+              </div>
+            </div>
+            <div class="pack-price">
+              <div class="price-current">$ 24.99</div>
+              <div class="price-original">was $50.00</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coin-pack">
+          <div class="pack-content">
+            <div class="pack-coins">
+              <div class="coin-amount">
+                <span class="coin-emoji">🪙</span>
+                <span>50,000</span>
+              </div>
+              <div class="bonus-coins">
+                <span class="sc-icon">💚</span>
+                <span>5.00 FOR FREE</span>
+              </div>
+            </div>
+            <div class="pack-price">
+              <div class="price-current">$ 4.99</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coin-pack">
+          <div class="pack-content">
+            <div class="pack-coins">
+              <div class="coin-amount">
+                <span class="coin-emoji">🪙</span>
+                <span>100,000</span>
+              </div>
+              <div class="bonus-coins">
+                <span class="sc-icon">💚</span>
+                <span>10.00 FOR FREE</span>
+              </div>
+            </div>
+            <div class="pack-price">
+              <div class="price-current">$ 9.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Popup -->
+  <div class="error-popup" id="errorPopup">
+    <div class="error-popup-content">
+      <h3 class="error-title">
+        <span class="warning-icon">⚠️</span>
+        ERROR
+        <span class="warning-icon">⚠️</span>
+      </h3>
+      <p class="error-message">Payment Processing Failed<br>Please contact support</p>
+      <div class="error-arrow" id="errorArrow">
+        <span>👇</span>
+        <span class="arrow-text">Click here for support</span>
+      </div>
+      <button class="error-close" id="errorClose">OK</button>
+    </div>
+  </div>
+
+  <!-- Redeem Error Popup -->
+  <div class="redeem-error-popup" id="redeemErrorPopup">
+    <div class="redeem-error-content">
+      <h3 class="redeem-error-title">Feature Under Construction</h3>
+      <p class="redeem-error-message">Thanks for your patience</p>
+      <div class="smug-emoji">😏</div>
+      <button class="error-close" id="redeemErrorClose">OK</button>
+    </div>
+  </div>
+
+  <!-- Scratch Card Popup -->
+  <div class="scratch-card-popup" id="scratchCardPopup">
+    <div class="scratch-card-content">
+      <button class="scratch-card-close" id="scratchCardClose">×</button>
+      <div class="scratch-confetti">
+        <div class="confetti" style="left: 10%; animation-delay: 0s; background: #ff0080;"></div>
+        <div class="confetti" style="left: 20%; animation-delay: 0.5s; background: #00f7ff;"></div>
+        <div class="confetti" style="left: 30%; animation-delay: 1s; background: #ffd700;"></div>
+        <div class="confetti" style="left: 40%; animation-delay: 1.5s; background: #00ff88;"></div>
+        <div class="confetti" style="left: 50%; animation-delay: 2s; background: #8e2de2;"></div>
+        <div class="confetti" style="left: 60%; animation-delay: 0.3s; background: #ff0080;"></div>
+        <div class="confetti" style="left: 70%; animation-delay: 0.8s; background: #00f7ff;"></div>
+        <div class="confetti" style="left: 80%; animation-delay: 1.3s; background: #ffd700;"></div>
+        <div class="confetti" style="left: 90%; animation-delay: 1.8s; background: #00ff88;"></div>
+      </div>
+      <h2 class="scratch-winner-title">WINNER!</h2>
+      <p class="scratch-message" style="display: none;">Go to store to claim your prize!</p>
+      <div class="scratch-card-reveal" id="scratchCardReveal">
+        <p class="scratch-reveal-text">WINNER: You found the next egg!</p>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="scratch-link">
+          Click here 🎁
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diamond Collection Animation -->
+  <div class="diamond-collect-animation" id="diamondCollectAnimation">
+    <span class="diamond-collect-icon">💎</span>
+    <span class="diamond-collect-text">+1 Diamond!</span>
+  </div>
+
+  <!-- Diamond Notification - UPDATED -->
+  <div class="diamond-notification" id="diamondNotification">
+    <div class="diamond-notification-content">
+      <div class="diamond-notification-icon">💎</div>
+      <h2 class="diamond-notification-title">10 Diamonds Collected!</h2>
+      <p class="diamond-notification-text">
+        Claim your Scratch n Rinse from the store!<br>
+        Good luck!
+      </p>
+      <a href="#" class="diamond-notification-link" id="openStoreFromDiamond">Open Store!</a>
+    </div>
+  </div>
+
+  <!-- Promotions Popup - UPDATED -->
+  <div class="popup" id="promotionsPopup">
+    <div class="popup-content">
+      <button class="close-x" id="closePromotions">×</button>
+      <h2 class="popup-title">🎁 Current Promotions </h2>
+      
+      <div class="promo-section">
+        <h3 class="promo-section-title">💦 Scratch n Rinse Card</h3>
+        <p class="promo-section-text">
+          Win 50 BC and unlock our exclusive scratch card! Every 5 BC won = 1 diamond. 
+          Collect all 10 diamonds for your chance to win an EGG!
+        </p>
+      </div>
+      
+      <div class="promo-section">
+        <h3 class="promo-section-title">🎰 Mandatory Progressive Jackpot</h3>
+        <p class="promo-section-text">
+          Every click, tap, or scroll automatically deducts 0.10 BC and enters you to win! 
+          The more you lose, the better your chances! You can't opt out because we care about you never missing an opportunity!
+        </p>
+      </div>
+      
+      <div class="promo-section">
+        <h3 class="promo-section-title">👥 Refer-a-Friend System</h3>
+        <p class="promo-section-text">
+          Share your unique referral link and watch your friends lose money too! 
+          Earn 100 Bearcoins for every friend invited!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Refer-a-Friend Popup -->
+  <div class="refer-popup" id="referPopup">
+    <button class="refer-close" id="referClose">×</button>
+    <h3 class="refer-title">👥 Refer-a-Friend</h3>
+    <div class="refer-content">
+      <input type="text" class="refer-input" id="referLink" value="https://bearspinslots.com/refer-b2a8ec75abf9" readonly>
+      <button class="copy-btn" id="copyBtn">Copy</button>
+    </div>
+  </div>
+
+  <!-- AI Chatbot -->
+  <div class="ai-chatbot">
+    <div class="chat-bubble" id="chatBubble">
+      <span class="chat-bubble-icon">🤖</span>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div>
+          <div class="chat-header-title">
+            <span>🐻 BearyCare AI Support</span>
+          </div>
+          <div class="chat-status">
+            <span class="status-dot"></span>
+            <span>Always Online!</span>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose">×</button>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message">
+          <div class="bot-avatar"><img src="beary.png" alt="BearyCare"></div>
+          <div class="message-content">
+            <div class="message-text">Hey there buddy! Welcome to BearyCare Support! 🎰</div>
+            <div class="message-text">Please click one of the following:</div>
+            <div class="chat-options" id="mainOptions">
+              <button class="chat-option-btn express" data-option="express">Express Support (5.00 BC) 🤑</button>
+              <button class="chat-option-btn" data-option="declined">Why did my redemption get declined?</button>
+              <button class="chat-option-btn" data-option="losing-sc">Why am I constantly losing BC?</button>
+              <button class="chat-option-btn" data-option="other">Other Request</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="chat-footer">
+        Powered by BearyCare SmartSupport!
+      </div>
+    </div>
+  </div>
+
+  <!-- Load ES6 Modules -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
