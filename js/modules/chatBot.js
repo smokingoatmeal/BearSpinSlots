@@ -389,7 +389,7 @@ export default class ChatBot {
                     <div class="message-content">
                         <div style="text-align: center; margin-top: 1rem;">
                             <div style="color: #ff0000; font-size: 1.5rem; font-weight: bold; text-shadow: 0 0 10px #ff0000; animation: pulse 1s ease-in-out infinite;">
-                                ☠️ DISCONNECTED ☠️
+                                ☠️ DISCONNECTED 
                             </div>
                             <div style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">
                                 Express Support has ended your session
@@ -424,4 +424,5 @@ export default class ChatBot {
 
 // Create and export instance
 const chatBot = new ChatBot();
+
 export { chatBot };
